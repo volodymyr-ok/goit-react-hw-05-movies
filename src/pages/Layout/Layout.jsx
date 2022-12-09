@@ -1,9 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Header } from './Layout.styled';
 
 const Layout = () => {
   return (
     <>
-      <header>
+      <Header>
         <ul>
           <li>
             <NavLink to={'/'}>Home</NavLink>
@@ -12,8 +14,10 @@ const Layout = () => {
             <NavLink to={'movies'}>Movies</NavLink>
           </li>
         </ul>
-      </header>
-      <Outlet />
+      </Header>
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

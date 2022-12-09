@@ -20,5 +20,5 @@ export const getMovieCast = id => {
 };
 
 export const findMovie = query => {
-  return axios.get(`${baseURL}search/movie?${API_KEY}&q=${query}`);
+  return axios.get(`${baseURL}search/movie?${API_KEY}&query=${query}`);
 };
