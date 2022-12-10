@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { getTrendingMovies } from 'services/API';
 import { imgSRC } from 'utils/imageHref';
+import { Heading, UL } from './Home.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -15,8 +16,9 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
-      <ul>
+    <>
+      <Heading>Trending today</Heading>
+      <UL>
         {movies.map(({ title, id, poster_path }) => {
           return (
             <li key={id}>
@@ -27,8 +29,8 @@ const Home = () => {
             </li>
           );
         })}
-      </ul>
-    </main>
+      </UL>
+    </>
   );
 };
 

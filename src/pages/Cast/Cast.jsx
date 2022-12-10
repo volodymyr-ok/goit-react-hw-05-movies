@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieCast } from 'services/API';
 import { imgSRC } from 'utils/imageHref';
+import { Div } from './Cast.styled';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -15,7 +16,9 @@ const Cast = () => {
   // console.log(cast);
 
   return (
-    <>
+    <Div>
+      <h3>CAST</h3>
+
       <ul>
         {cast.map(({ id, character, name, profile_path }) => {
           return (
@@ -27,8 +30,7 @@ const Cast = () => {
           );
         })}
       </ul>
-      <p>CAST</p>
-    </>
+    </Div>
   );
 };
 export default Cast;

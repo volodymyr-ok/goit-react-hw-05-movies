@@ -1,32 +1,66 @@
 import styled from 'styled-components';
 
 export const Div = styled.div`
-  /* background-color: black; */
   display: grid;
-  gap: 5px;
-  grid-template-columns: 25% 25% 50%;
+  grid-gap: 15px;
   position: relative;
-  display: flex;
-  flex-direction: column;
 
   a {
-    display: inline-block;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 200px;
-    padding: 10px;
-    /* margin: 5px; */
-    text-align: center;
+    &.active {
+      background-color: aqua;
+    }
+  }
+
+  .backLink {
+    font-weight: 500;
+    position: sticky;
+    display: block;
+    border-bottom: 1px solid brown;
+    text-align: end;
+    &::before {
+      content: '<<<';
+      margin-right: 50px;
+    }
   }
 
   img {
-    /* position: absolute;
-    top: 5px;
-    right: 5px; */
     max-width: 350px;
   }
 
-  .main-details {
+  .movie-details {
     display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    & img {
+      align-self: center;
+    }
+
+    h2 {
+      text-align: end;
+      font-size: 36px;
+    }
+
+    ul {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+  }
+
+  .details-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-around;
+
+    & a {
+      border: 1px solid black;
+      padding: 10px;
+      border-radius: 10px;
+    }
   }
 `;

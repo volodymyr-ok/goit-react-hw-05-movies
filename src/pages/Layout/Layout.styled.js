@@ -17,8 +17,9 @@ export const Wrapper = styled.div`
     top: 0;
     right: 0;
     width: 100%;
-    background-color: #ccccff;
+    background-color: #ccccff6b;
     padding: 15px 35px;
+    box-shadow: 5px 0 5px black;
 
     z-index: 1;
 
@@ -28,7 +29,7 @@ export const Wrapper = styled.div`
     }
   }
 
-  & .link {
+  .link {
     font-family: 'Quicksand', sans-serif;
 
     font-size: 20px;
@@ -54,16 +55,6 @@ export const Main = styled.main`
   padding: 0 15px;
   margin-top: 75px;
 
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(auto, 1fr); */
-    grid-gap: 15px;
-  }
-
-  li {
-    text-align: center;
-  }
   /* padding: 50px 10px 10px; */
   /* margin-top: 50px; */
 `;
