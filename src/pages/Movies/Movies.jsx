@@ -1,6 +1,7 @@
 import { findMovie } from 'services/API';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Div } from './Movies.styles';
 
 const Movies = () => {
   const [result, setResult] = useState([]);
@@ -28,7 +29,7 @@ const Movies = () => {
   console.log('SEARCH RESULTS', result);
 
   return (
-    <>
+    <Div>
       <form onSubmit={handleSubmit}>
         <input type="text" name="movie" />
         <button type="submit">Search</button>
@@ -43,7 +44,7 @@ const Movies = () => {
           </li>
         ))}
       </ul>
-    </>
+    </Div>
   );
 };
 
