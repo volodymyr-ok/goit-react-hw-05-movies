@@ -25,7 +25,7 @@ const Movies = () => {
     });
   }, [query]);
 
-  console.log(result);
+  console.log('SEARCH RESULTS', result);
 
   return (
     <>
