@@ -6,25 +6,37 @@ export const Div = styled.div`
   position: relative;
 
   a {
-    &.active {
-      background-color: aqua;
+    &:hover,
+    &:focus {
+      background-color: #d3d5ff40;
     }
   }
 
   .backLink {
-    font-weight: 500;
-    position: sticky;
-    display: block;
-    border-bottom: 1px solid brown;
+    position: fixed;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    border: 2px solid #d3d5ff40;
+    border-radius: 10px;
+    padding: 10px;
     text-align: end;
-    &::before {
-      content: '<<<';
-      margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(26, 26, 26, 65%);
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(103, 102, 105, 100%);
     }
   }
 
   img {
-    max-width: 350px;
+    max-width: 300px;
   }
 
   .movie-details {
@@ -32,18 +44,9 @@ export const Div = styled.div`
     justify-content: space-between;
     gap: 15px;
 
-    & img {
-      align-self: center;
-    }
-
     h2 {
-      text-align: end;
-      font-size: 36px;
-    }
-
-    ul {
-      grid-column: 2/3;
-      grid-row: 2/3;
+      text-align: center;
+      font-size: 54px;
     }
   }
 
@@ -51,16 +54,32 @@ export const Div = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+
+    .overview {
+      font-style: italic;
+    }
+
+    .genres-title {
+      font-weight: 700;
+    }
   }
 
   .links {
     display: flex;
+    gap: 20px;
     justify-content: space-around;
 
     & a {
-      border: 1px solid black;
+      border-top: 2px solid rgba(103, 102, 105, 85%);
+      border-bottom: 2px solid rgba(103, 102, 105, 85%);
       padding: 10px;
       border-radius: 10px;
+
+      &.active {
+        background-color: rgba(72, 66, 84, 85%);
+        border: none;
+      }
     }
   }
 `;

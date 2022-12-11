@@ -1,7 +1,9 @@
 import { findMovie } from 'services/API';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Div } from './Movies.styles';
+import { Div } from './Movies.styled';
+import { FaSearch } from 'react-icons/fa';
+import { imgSRC } from 'utils/imageHref';
 
 const Movies = () => {
   const [result, setResult] = useState([]);
@@ -32,14 +34,17 @@ const Movies = () => {
     <Div>
       <form onSubmit={handleSubmit}>
         <input type="text" name="movie" />
-        <button type="submit">Search</button>
+        <button type="submit">
+          <FaSearch />
+        </button>
       </form>
 
       <ul>
-        {result.map(({ id, title }) => (
+        {result.map(({ id, title, poster_path }) => (
           <li key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
-              <p>{title}</p>
+              <img src={imgSRC(poster_path)} alt={title} />
+              <h3>{title}</h3>
             </Link>
           </li>
         ))}

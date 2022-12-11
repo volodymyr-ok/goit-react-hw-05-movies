@@ -24,8 +24,12 @@ const Cast = () => {
           return (
             <li key={id}>
               <img src={imgSRC(profile_path)} width="200" alt={name} />
-              <p>{character}</p>
-              <p>{name}</p>
+              <p>
+                <b>Character:</b> {character}
+              </p>
+              <p>
+                <b>Actor:</b> {name}
+              </p>
             </li>
           );
         })}

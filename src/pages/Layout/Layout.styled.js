@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: relative;
 
   a {
-    color: #333;
+    color: #dfdfdf;
     text-decoration: none;
   }
 
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     top: 0;
     right: 0;
     width: 100%;
-    background-color: #ccccff6b;
+    background-color: rgba(99, 99, 108, 70%);
     padding: 15px 35px;
     box-shadow: 5px 0 5px black;
 
@@ -27,34 +27,33 @@ export const Wrapper = styled.div`
       display: flex;
       gap: 15px;
     }
-  }
 
-  .link {
-    font-family: 'Quicksand', sans-serif;
+    .link {
+      font-family: 'Quicksand', sans-serif;
 
-    font-size: 20px;
-    font-weight: 500;
-    display: inline-block;
-    width: 100px;
-    text-align: center;
-    border: 2px solid #005f69;
-    border-radius: 5px;
-    padding: 5px;
+      font-size: 20px;
+      font-weight: 500;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      border: 2px solid #333;
+      border-radius: 5px;
+      padding: 5px;
+      background: rgba(112, 112, 112, 75%);
+      color: #fff;
 
-    &.active {
-      background: linear-gradient(to top, lime, 20%, cyan);
-    }
+      &.active {
+        background: rgba(96, 145, 114, 100%);
+      }
 
-    &:hover:not(.active) {
-      background-color: aqua;
+      &:hover:not(.active) {
+        background: rgba(124, 167, 170, 65%);
+      }
     }
   }
 `;
 
 export const Main = styled.main`
-  padding: 0 15px;
+  padding: 0 15px 15px;
   margin-top: 75px;
-
-  /* padding: 50px 10px 10px; */
-  /* margin-top: 50px; */
 `;

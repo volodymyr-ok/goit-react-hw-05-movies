@@ -10,6 +10,7 @@ import { Suspense } from 'react';
 import { getMovieById } from 'services/API';
 import { imgSRC } from 'utils/imageHref';
 import { Div } from './MoviesDetails.styled';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const MoviesDetails = () => {
   const [movie, setMovie] = useState({});
@@ -29,7 +30,8 @@ const MoviesDetails = () => {
   return (
     <Div>
       <Link to={location.state?.from} className="backLink">
-        Back to previous
+        <FaArrowLeft />
+        <span>Back to previous</span>
       </Link>
 
       <div className="movie-details">
@@ -37,11 +39,7 @@ const MoviesDetails = () => {
 
         <div className="details-wrapper">
           <h2>{title}</h2>
-
-          <p>
-            <i>{overview}</i>
-          </p>
-
+          <p className="overview">{overview}</p>
           {release_date ? (
             <p>
               <b>Release date:</b> {release_date}
@@ -50,14 +48,12 @@ const MoviesDetails = () => {
 
           {genres?.length ? (
             <div>
-              <p>
-                <b>Ganres</b>
-              </p>
+              <p className="genres-title">Genres</p>
 
-              <ul>
+              <ul className="genres">
                 {genres.map(({ id, name }) => {
                   return (
-                    <li key={id}>
+                    <li key={id} className="genre">
                       <p>{name}</p>
                     </li>
                   );
